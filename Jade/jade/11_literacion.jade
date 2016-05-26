@@ -1,0 +1,24 @@
+doctype
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Literacion (jade)
+  body
+    h1 Literacion (jade)
+    
+    ul
+    each val in [1, 2, 3, 4, 5, ]
+      li= val
+    
+    ul
+    each val, index in ['zero', 'one', 'two', 'three', 'four', 'five']
+      li= index + ': ' + val
+    
+    ul
+    each val, index in {1:'one',2:'two',3:'three',4:'four',5:'five'}
+      li= index + ': ' + val
+      
+    - var n = 0
+    ul
+    while n < 4
+      li= n++
