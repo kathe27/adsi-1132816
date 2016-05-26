@@ -1,0 +1,17 @@
+doctype
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Codigo (jade)
+  body
+    h1 Codigo (jade)
+    // Ciclo For
+    ul
+      - for (var i = 1; i <= 10; i++)
+        li pink #{i}
+    // Ciclo Each a un Arreglo    
+    ol
+      -
+        bicis = ["Perro", "Gato", "Hamster", "Pez", "Lobo", "Cangrejo"]
+      each bici in bicis
+        li= bici
