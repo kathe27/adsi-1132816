@@ -1,0 +1,41 @@
+section.padre {
+  display: inline-block;
+  margin: 10px auto;
+  width: 480px;
+  height: 530px;
+  border: 2px solid #ccc;
+  margin-right: 30px;
+}
+section div {
+  display: inline-block;
+  visibility: none;
+  margin: 10px;
+  width: 134px;
+  height: 134px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font: 20px Arial;
+  background-color: #808080;
+}
+section div.caja5 {
+  display: none;
+}
+section div.move {
+  visibility: hidden;
+}
+section.padre h4 {
+  text-align: center;
+  font: 15px CASTELLAR;
+}
+main.tipos div,
+main.tipos a {
+  border: 2px solid #999;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+main.tipos div.linea {
+  display: inline;
+}
+main.tipos a.bloque {
+  display: block;
+}
