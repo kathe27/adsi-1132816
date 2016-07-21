@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuevo selectores CSS 3</title>
+	<link rel="stylesheet" href="css/01_selectores.css">
+</head>
+<body>
+	<h1>Nuevo selectores CSS 3</h1>
+	<hr>
+	<!-- .............. (p~ul) .............. -->
+	<!-- ~ -> Virguliña -->
+	<fieldset  class="ejer1">
+		<legend>
+			<h2>p~ul</h2>
+		</legend>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		</p>
+		<ul>
+			<li>Lorem Ipsum 1</li>
+			<li>Lorem Ipsum 2</li>
+			<li>Lorem Ipsum 3</li>
+		</ul>
+		<ul>
+			<li>Consectetur Adipisicing 1</li>
+			<li>Consectetur Adipisicing 2</li>
+			<li>Consectetur Adipisicing 3</li>
+		</ul>
+	</fieldset>
+	<!-- ............... (a[href^="https"]) ................ -->
+	<fieldset class="ejer2">
+		<legend>
+			<h2>a[href^="https"]</h2>
+		</legend>
+		<a href="http://www.google.com">Ir a Google</a>
+		<a href="http://www.yahoo.com">Ir a Yahoo</a>
+		<a href="https://www.web.whatsapp.com">Ir a Whatsapp</a>
+		<a href="http://www.facebook.com">Ir a Facebook</a>
+	</fieldset>
+	<fieldset class="ejer3">
+		<legend>
+			<h2>a[href$=".pdf"]</h2>
+		</legend>
+		<a href="archivo.pdf">Recetas Colombianas</a>
+		<a href="archivo.doc">Recetas Argentinas</a>
+		<a href="archivo.xls">Recetas Mexicanas</a>
+	</fieldset>
+	<fieldset class="ejer4">
+		<legend>
+			<h2>a[href*="google"]</h2>
+		</legend>
+		<a href="http://imagenes.google.com">Ir a Imagenes</a>
+		<a href="http://maps.apps.com">Ir a Mapas</a>
+		<a href="https://videos.youtube.com">Ir a Videos</a>
+		<a href="http://maps.apple.com">Ir a Apple</a>
+	</fieldset>
+	<fieldset class="ejer5">
+		<legend>
+			<h2>p:first-of-type</h2>
+		</legend>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+	</fieldset>
+	<fieldset class="ejer6">
+		<legend>
+			<h2>p:last-of-type</h2>
+		</legend>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum.</p>
+	</fieldset>
+	<fieldset class="ejer7">
+		<legend>
+			<h2>p:only-of-type</h2>
+		</legend>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, repellendus.</p>
+	</fieldset>
+	<fieldset class="ejer8">
+		<legend>
+			<h2>p:only-child</h2>
+		</legend>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum?</p>
+		</div>
+	</fieldset>
+	<fieldset class="ejer9">
+		<legend>
+			<h2>p:nth-child(2)</h2>
+		</legend>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ad.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ad.</p>
+		</div>
+	</fieldset>
+	<fieldset class="ejer10">
+		<legend>
+			<h2>p:nth-last-child(2)</h2>
+		</legend>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, et!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, et!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, et!</p>
+		</div>
+	</fieldset>
+	<fieldset class="ejer11">
+		<legend>
+			<h2>p:nth-of-type(3)</h2>
+		</legend>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, officia.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, officia.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, officia.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, officia.</p>
+		</div>
+	</fieldset>
+	<fieldset class="ejer12">
+		<legend>
+			<h2>p:nth-last-of-type(2)</h2>
+		</legend>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, quas.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, quas.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, quas.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, quas.</p>
+		</div>
+	</fieldset>
+	<fieldset class="ejer13">
+		<legend>
+			<h2>p:last-child</h2>
+		</legend>
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, cumque.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, cumque.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, cumque.</p>
+		</div>
+	</fieldset>
+	<fieldset class="ejer14">
+		<legend>
+			<h2>:root</h2>
+		</legend>
+		<p>Revisar el fondo de la pagina</p>
+	</fieldset>
+	<fieldset class="ejer15">
+		<legend>
+			<h2>p:empty</h2>
+		</legend>
+		<section>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, corporis.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, corporis.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, corporis.</p>
+			<p></p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, corporis.</p>
+		</section>
+	</fieldset>
+	<fieldset class="ejer16">
+		<legend>
+			<h2>destino:target</h2>
+		</legend>
+		<a href="#destino1">Destino 1</a>
+		<a href="#destino2">Destino 2</a>
+		<a href="#destino3">Destino 3</a>
+		<section>
+			<p id="destino1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, velit.</p>
+			<p id="destino2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, velit.</p>
+			<p id="destino3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, velit.</p>
+		</section>
+	</fieldset>
+	<fieldset class="ejer17">
+		<legend>
+			<h2>input:enabled / input:disabled</h2>
+		</legend>
+		<input type="text" placeholder="Email">
+		<input type="text" placeholder="Nombre" disabled>
+		<input type="text" placeholder="Apellidos" disabled>
+	</fieldset>
+	<fieldset class="ejer18">
+		<legend>
+			<h2>input:checked</h2>
+		</legend>
+		<label>
+			<input type="checkbox" name="pais"> Colombia
+		</label>
+		<label >
+			<input type="checkbox" name="pais"> Brasil
+		</label>
+		<label>
+			<input type="checkbox" name="pais"> Peru
+		</label>
+	</fieldset>
+</body>
+</html>

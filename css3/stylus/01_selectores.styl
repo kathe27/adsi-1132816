@@ -1,0 +1,75 @@
+html
+	font-size 63.5%
+body
+	//background-color #ab3361
+	font 1.6rem Arial
+fieldset
+	border none
+	background-color #fff
+	padding 20px
+	margin 20px auto
+	width 800px
+fieldset legend
+	background-color #ED4786
+	color #fff
+	padding 10px 40px
+fieldset legend h2
+	margin 0px
+	padding 0px
+	
+//Selecciona los elementos <ul> precedidos por <p> 
+.ejer1 p~ul
+// Selecciona los elementos <a> cuyo valor de 'href' comience en 'https' 
+.ejer2 a[href^="https"] 
+//Selecciona los elementos <a> cuyo valor 'href' termina en '.pdf' 
+.ejer3 a[href$=".pdf"]
+//Selecciona los elementos <a> cuyo valor 'href' contiene 'google' 
+.ejer4 a[href*="google"]
+//Selecciona el primer elemento <p> de su padre
+.ejer5 p:first-of-type
+//Selecciona el ultimo elemento <p> de su padre
+.ejer6 p:last-of-type
+//Selecciona el unico elemento <p> de su padre
+.ejer7 p:only-of-type
+//Selecciona el unico elemento hijo <p> de su padre
+.ejer8 p:only-child
+//Selecciona el segundo elemento hijo <p> de su padre
+.ejer9 p:nth-child(2)
+//Selecciona el segundo elemento hijo <p> contando desde el ultimo elemento hijo
+.ejer10 p:nth-last-child(2)
+//Selecciona el segundo elemento hijo <p> de su padre
+.ejer11 p:nth-of-type(3)
+//Selecciona el segundo elemento hijo <p> contando desde el ultimo elemento hijo
+.ejer12 p:nth-last-of-type(2)
+//Selecciona el ultimo elemento hijo <p> de su padre
+.ejer13 p:last-child
+//Selecciona los elementos <p> que no tienen hijos (incluidos los nodos de texto)
+.ejer15 p:empty 
+//Selecciona elemento con id 'destino'
+.ejer16 #destino1:target
+.ejer16 #destino2:target
+.ejer16 #destino3:target
+	background-color #e5ffc7
+	border 2px solid #acc62b
+	color #70811a
+	padding 4px 
+//Aplica color de fondo el elemento raiz del documento
+:root
+	background -webkit-linear-gradient(left,#ab3361,#6a203c)
+::selection
+	background-color turquoise
+	color white
+	
+input
+	border none
+	padding 10px
+//Selecciona todos los elementos 'input' habilitados
+input:enabled 
+	background-color #e5ffc7
+//Selecciona todos los elementos 'input' inhabilitados
+input:disabled 
+	background-color #ffcfe1
+
+
+	
+	
