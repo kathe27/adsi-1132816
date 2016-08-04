@@ -36,11 +36,12 @@ fieldset legend h2 {
 .ejer15 p:empty,
 .ejer16 #destino1:target,
 .ejer16 #destino2:target,
-.ejer16 #destino3:target {
+.ejer16 #destino3:target,
+.ejer19 section :not(p) {
   background-color: #e5ffc7;
   border: 2px solid #acc62b;
   color: #70811a;
-  padding: 4px;
+  padding: 8px;
 }
 :root {
   background: -webkit-linear-gradient(left, #ab3361, #6a203c);
@@ -58,4 +59,16 @@ input:enabled {
 }
 input:disabled {
   background-color: #ffcfe1;
+}
+input[type=checkbox] {
+  -webkit-appearance: none;
+  background-color: #ab3361;
+  cursor: pointer;
+}
+input:checked {
+  background-color: #acc62b;
+}
+::selection {
+  background-color: #8000ff;
+  color: #fff;
 }

@@ -49,10 +49,11 @@ fieldset legend h2
 .ejer16 #destino1:target
 .ejer16 #destino2:target
 .ejer16 #destino3:target
+.ejer19 section :not(p)
 	background-color #e5ffc7
 	border 2px solid #acc62b
 	color #70811a
-	padding 4px 
+	padding 8px 
 //Aplica color de fondo el elemento raiz del documento
 :root
 	background -webkit-linear-gradient(left,#ab3361,#6a203c)
@@ -69,6 +70,21 @@ input:enabled
 //Selecciona todos los elementos 'input' inhabilitados
 input:disabled 
 	background-color #ffcfe1
+	
+
+// Elementos de tipo <checkbox>
+input[type=checkbox]
+	-webkit-appearance none
+	background-color #ab3361
+	cursor pointer
+// Elemento checkeado	
+input:checked 
+	background-color #acc62b
+
+// Formato para la seleccion de texto en la pagina	
+::selection
+	background-color #8000FF
+	color #fff
 
 
 	
