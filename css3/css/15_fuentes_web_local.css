@@ -1,0 +1,22 @@
+body {
+  background-color: #8080ff;
+}
+section.principal {
+  background-color: #0ff;
+  margin: 50px auto;
+  padding: 20px;
+  width: 600px;
+}
+h1 {
+  color: #8080ff;
+  font-family: 'Walter';
+  font-size: 3.6em;
+  text-align: center;
+}
+p {
+  font-family: 'Catherine';
+  font-size: 3em;
+  color: #8080ff;
+  line-height: 1em;
+  text-align: justify;
+}
