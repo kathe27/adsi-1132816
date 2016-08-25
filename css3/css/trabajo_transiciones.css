@@ -1,0 +1,79 @@
+@import 'https://fonts.googleapis.com/css?family=Ravi+Prakash';
+body {
+  background-image: url("https://image.freepik.com/vector-gratis/degradado-de-color-con-los-circulos-dibujados-mano_21-87752481.jpg");
+}
+section {
+  width: 650px;
+  height: 600px;
+  margin: 20px auto;
+  background-color: rgba(202,34,121,0.5);
+}
+nav {
+  background-color: rgba(255,255,255,0.3);
+  position: relative;
+  top: 40px;
+  width: 650px;
+  margin: 40px auto;
+  height: 50px;
+  border-radius: 10px;
+}
+nav li {
+  width: 100px;
+  height: 30px;
+  background-color: rgba(202,34,121,0.3);
+  display: inline-block;
+  margin-left: 40px;
+  padding: 2px;
+  height: 45px;
+}
+nav li a span {
+  font-size: 20px;
+  position: relative;
+  top: 20px;
+  transition: all 1s;
+  color: #fff;
+  display: block;
+  font-family: 'Ravi Prakash', cursive;
+}
+nav li a span.anime:hover {
+  transition: all 1s;
+  top: 0px;
+  background-color: #800080;
+}
+nav li a span.car:hover {
+  transition: all 1s;
+  font-size: 50px;
+}
+nav li a span.dri:hover {
+  transition: all 1s;
+  -webkit-transform: rotate(180deg);
+}
+nav li a span.pai:hover {
+  transition: all 1s;
+  border-radius: 50% 50% 50% 50%;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(202,34,121,0.6);
+  top: -20px;
+}
+article {
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  margin: 40px auto;
+  margin-top: 60px;
+}
+article {
+  background: #f00 url("../imgs/driada.jpg") no-repeat center top;
+  background-size: 160%;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(255,255,255,0.3);
+}
+article:hover {
+  transition: all 1s;
+  background-size: 60%;
+}
+a {
+  text-decoration: none;
+}
