@@ -1,0 +1,47 @@
+body {
+  width: 1024px;
+  margin: 0px auto;
+}
+header img {
+  position: relative;
+  left: 250px;
+  width: 500px;
+}
+article {
+  border: 4px solid #ff80c0;
+  height: 500px;
+  width: 300px;
+  text-align: justify;
+  display: inline-block;
+  margin-left: 10px;
+}
+img {
+  width: 250px;
+  position: relative;
+  left: 50px;
+}
+@media (max-width: 1024px) {
+  section {
+    width: 1024px;
+  }
+}
+@media (max-width: 768px) {
+  header img {
+    position: relative;
+    left: 150px;
+    width: 300px;
+  }
+  section {
+    width: 768px;
+  }
+}
+@media (max-width: 520px) {
+  header img {
+    position: relative;
+    left: 50px;
+    width: 200px;
+  }
+  section {
+    width: 520px;
+  }
+}

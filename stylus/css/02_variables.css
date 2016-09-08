@@ -1,0 +1,30 @@
+/* Variables */
+/* Cuando la variable tiene el mismo nombre de una propiedad CSS, utilizar $*/
+body {
+  background-color: #8d2c5f;
+  font-family: Arial;
+}
+h1 {
+  color: #f59cc4;
+  border-bottom: 4px dotted #f59cc4;
+}
+hr {
+  border: 4px solid #fff;
+}
+section.caja {
+  background-color: #ddd;
+  height: 400px;
+  margin: 20px auto;
+  width: 800px;
+}
+/* Realizar operaciones con los valores de las propiedades, ejemplo (width y height) */
+#logo {
+  background-color: #8d2c5f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 80px;
+  margin-left: -75px;
+  margin-top: -40px;
+}
