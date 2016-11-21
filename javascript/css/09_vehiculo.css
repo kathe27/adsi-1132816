@@ -1,0 +1,37 @@
+body{
+	background-color: #dddcc5; 
+	font: 16px Tahoma;
+	margin: 0px;
+}
+ul#info{
+	background-color: #1d2326;
+	color: #dddcc5;
+	padding: 0px;
+	margin: 0px;
+	width: 320px;
+}
+ul#info li{
+	border-bottom: thin dotted #dddcc5;
+}
+
+ul#info li span{
+	display: inline-block;
+	color: #958976;
+	padding: 18px;
+	width: 80px;
+}
+
+ul#info li:first-child,
+ul#info li:nth-child(7){
+	background-color: #611427;
+	padding: 20px;
+	text-align: center;
+}
+ul#info li#eimagen{
+	position: relative;
+}
+ul#info li#eimagen img{
+	top: 12px;
+	position: absolute;
+	width: 120px;
+}

@@ -1,0 +1,8 @@
+@import 'fx_zoom.css';
+h1 {
+  font: 1.8em Tahoma;
+  border-bottom: 2px solid #d742c8;
+  color: #d742c8;
+  text-align: center;
+  padding: 20px;
+}

@@ -1,0 +1,20 @@
+
+main {
+	margin: 50px auto;
+	width: 960px;
+	padding: 20px;
+}
+main section {
+	background: url(../imgs/minions.jpeg) no-repeat center center; ;
+	background-size: 180% ;
+	border: 2px solid #bf09c4;
+	display: inline-block;
+	height: 250px;
+	margin: 4px;
+	width: 300px;
+	transition: all 1s ease-in;
+}
+main section:hover{
+	background-size: 120%
+}
+

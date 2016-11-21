@@ -1,0 +1,188 @@
+
+body {
+	font: 16px Tahoma;
+	margin: 0px;
+	padding: 0px;
+}
+
+main#template03 {
+	margin: 0px auto;
+	width: 1270px;
+}
+/*------------------------------------------*/
+section#topmenu {
+	background-color: #fff;
+}
+
+section#topmenu div {
+	height: 116px;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	width: 630px;
+}
+
+section#topmenu div.logo figure {
+	background: #fff url(../imgs/logo.png) no-repeat center center;
+	height: 52px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	left: 240px;
+	top: 32px;
+	width: 356px;
+
+}
+section#topmenu div.links nav {
+	position: absolute;
+	top: 26px;
+	left: 80px;
+
+}
+section#topmenu div.links nav input{
+	-webkit-appearance: none;
+	border: none;
+	background: #f2f2f2 url(../imgs/search.png) no-repeat 190px center;
+	margin-left: 120px;
+	outline: none;
+	padding: 10px;
+	width: 220px;
+}
+
+section#topmenu div.links a {
+	color: #adadad;
+	font-size: 11px;
+	margin-right: 14px;
+	text-decoration: none;
+}
+section#topmenu div.links a:hover,
+section#topmenu div.links a.active {
+	color: #444;
+}
+
+/*------------------------------------------*/
+section#mainmenu {
+	background-color: #333;
+}
+
+section#mainmenu ul {
+	margin: 0px auto;
+	padding: 0px;
+	width: 780px;
+
+}
+section#mainmenu ul li{
+	color: #fff;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	list-style: none;
+	margin-left: -5px;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: top;
+	width: 128px;
+}
+
+section#mainmenu ul li:hover,
+section#mainmenu ul li.active{
+	background-color: #282828;
+	cursor: pointer;
+}
+
+/*------------------------------------------*/
+
+section#slider {
+	background: url(../imgs/slide.png) no-repeat center center;
+	background-size: cover;
+	height: 420px;
+}
+
+section#slider nav {
+	position: relative;
+	top: 200px;
+}
+
+section#slider nav button {
+	background-color: rgba(0,0,0,0.4);
+	border: none;
+	color: #fff;
+	font-size: 2em; 
+	width: 40px;
+}
+
+section#slider nav button:hover {
+	background-color: rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+
+section#slider nav button.right {
+	position: absolute;
+	right: 0px;
+}
+/*------------------------------------------*/
+
+
+section#cards article {
+	color: #fff;
+	display: inline-block;
+	margin-left: -5px;
+	padding: 20px;
+	position: relative;
+	vertical-align: top;
+	width: 276px;
+}
+
+section#cards article.card1 {
+	background-color: #fbd700;
+	color: #000;
+	margin-left: 0px; 
+}
+section#cards article.card2 {
+	background-color: #e64300;
+}
+section#cards article.card3 {
+	background-color: #2d81e2;
+}
+section#cards article.card4 {
+	background-color: #5ba017;
+	width: 282px;
+}
+
+section#cards article h1 {
+	font-size: 2em;
+	margin: 0px
+}
+section#cards article h3 {
+	font-weight: normal;
+	font-size: 1.8em;
+	margin: 0px
+}
+section#cards article p {
+	font-size: 12px;
+	text-align: justify;
+}
+
+section#cards article button {
+	border: none;
+	height: 28px;
+	position: absolute;
+	right: 20px; bottom: 10px;
+	text-indent: -9999px;
+	width: 28px; 
+}
+
+section#cards article.card1 button {
+	background: url(../imgs/btn1.png) no-repeat center center;
+}
+
+section#cards article.card2 button {
+	background: url(../imgs/btn2.png) no-repeat center center;
+}
+
+section#cards article.card3 button {
+	background: url(../imgs/btn3.png) no-repeat center center;
+}
+section#cards article.card4 button {
+	background: url(../imgs/btn4.png) no-repeat center center;
+}

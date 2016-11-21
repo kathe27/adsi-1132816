@@ -1,0 +1,109 @@
+body{
+	background: url(../imgs/fondo.jpg) ;
+}
+h1{
+	font-size: 60px;
+	font-family: 'Lobster', cursive;
+	color: #01b1af;
+	text-shadow: 2px 2px 15px black;
+	width: 500px;
+	position: absolute;
+	bottom: 350px;
+	left: 350px;
+}
+div.logo{
+	background: url(../imgs/logo.png) no-repeat;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	bottom: 250px;
+	left: 270px;
+}
+form{
+	height: 550px;
+	width: 400px;
+	background-color: #1C2B4A;
+	margin: 400px 350px;
+	display: inline-block;
+	position:relative;
+	
+}
+h1#h1{
+	display: inline-block;
+	width: 400px;
+	height: 80px;
+	position: absolute;
+	top:-40px;
+	left:0px;
+	color:white;
+	background-color: #17233B;
+	text-align: center;
+	z-index:0;
+	
+}
+nav.opciones{
+	margin:100px auto;
+	width: 400px;
+	height: 100px;
+
+}
+input{
+	background-color: #12192C;
+	display: block;
+	color: #fff;
+	margin: 15px auto;
+	width: 300px;
+	height: 40px;
+}
+h2{
+	position: relative;
+	top: -50px;
+	font-family: tahoma;
+	font-size: 13px;
+	color: gray;
+	text-align: center;
+}
+button{
+	font-size: 20px;
+	font-family:  'Lobster', cursive; 
+	width: 200px;
+	height: 40px;
+	position: relative;
+	right: 650px;
+	top: 80px;
+	border-radius: 20px;
+}
+button:hover{
+	background-color: #C4C6BB;
+}
+p.uno{
+	color: #00DFDF; 
+	font-size: 35px;
+	position: relative;
+	right: -850px;
+	bottom: 850px;
+	font-family: 'Lobster', cursive;
+	text-shadow: 8px 8px 20px black;
+}
+p.dos,p.tres,p.cuatro{
+	font-size: 25px;
+	font-family: 'Lobster', cursive;
+	position: relative;
+	left: 850px;
+	bottom: 850px;
+}
+div.copy{
+	position: absolute;
+	bottom: -290px;
+	left: 620px;
+	font-size: 14px;
+	font-family: Arial;
+	text-align: center;	
+}
+input.people{
+	height: 100px;
+}
+.hola{
+	position: relative;
+	left: 50px;
+}

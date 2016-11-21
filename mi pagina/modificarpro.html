@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formularios</title>
+	<link rel="stylesheet" href="css/modificarpro.css"><link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+<body>
+	<h1>LA BOTICA MEDICINA HERBAL</h1>
+		<div class="logo"></div> 
+	</div>
+
+	<form action="">
+		<h1 id="h1">Modificar</h1>
+		<br>
+		<nav class="opciones">
+		<input type="number" placeholder="		      Ingrese id producto">
+		<p class="hola">Tipo de producto: 
+   			<select class="option hola" name="documento">
+     			<option>Mascarillas</option>
+     			<option>Lociones</option>
+     			<option>Sahumerios</option>
+     			<option>Implementos de aseo</option>
+   			</select>
+		</p>
+		<input class="people" type="text" placeholder="		Ingrese nueva información">
+		<input class="people" type="number" placeholder="		Ingrese cantidad">
+		<input class="people" type="number" placeholder="		Ingrese precio">
+
+		<form enctype="multipart/form-data" action="uploader.php" method="POST">
+		<input name="uploadedfile" type="file" />
+		<input type="submit" value="Subir archivo" />
+		</form></nav>
+		<button>Aceptar</button>
+		<p class="uno">CONTACTENOS</p>
+		<p class="dos">KATHERINE AGUILAR VERA </p>
+		<p class="tres">CEL:3128652387 </p>
+		<p class="cuatro">E-mail: katherine19030@gmail.com</p>	
+	</form>	
+</body>
+</html>
