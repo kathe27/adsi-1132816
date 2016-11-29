@@ -80,3 +80,15 @@ div.copy{
 div#superior{
 	margin-top: -10px;
 }
+input{
+	position: relative;
+	top: 480px;
+	left: 550px;
+	width: 250px;
+	background-color: #DDF9F8;
+}
+img.bus{
+	position: relative;
+	top: 482px;
+	left: 530px;
+}

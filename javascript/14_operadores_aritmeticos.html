@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operadores Aritméticos</title>
+	<style>
+		table{
+			border-collapse: collapse;
+			color: #777;
+			font: 16px Arial;
+			padding: 4px;
+			margin: 100px auto;
+			width: 800px;
+		}
+		table td, table th{
+			border: 1px dotted #ccc;
+			padding: 8px;
+		}
+		table th{
+			background-color: #999;
+			color: #fff;
+		}
+		table tr:nth-child(even){
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="4">Operadores Aritméticos</th>
+			</tr>
+			<tr>
+				<th>Operador</th>
+				<th>Descripción</th>
+				<th>Ejemplo</th>
+				<th>Resulatado X</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>+</td>
+				<td>SUMA</td>
+				<td>x=y+2</td>
+				<td id="rsuma"></td>
+			</tr>
+			<tr>
+				<td>-</td>
+				<td>RESTA</td>
+				<td>x=y-2</td>
+				<td id='rresta'></td>
+			</tr>
+			<tr>
+				<td>*</td>
+				<td>MULTIPLICACIÓN</td>
+				<td>x=y*2</td>
+				<td id='rmultiplicacion'></td>
+			</tr>
+			<tr>
+				<td>/</td>
+				<td>DIVISIÓN</td>
+				<td>x=y/2</td>
+				<td id='rdivision'></td>
+			</tr>
+			<tr>
+				<td>%</td>
+				<td>MÓDULO</td>
+				<td>x=y%2</td>
+				<td id='rmodulo'></td>
+			</tr>
+			<tr>
+				<td rowspan="2">++</td>
+				<td rowspan="2">INCREMENTO</td>
+				<td>x=++y</td>
+				<td id='rincrementopre'></td>
+			</tr>
+			<tr>
+				<td>x=y++</td>
+				<td id='rincrementopos'></td>
+			</tr>
+			<tr>
+				<td rowspan="2">--</td>
+				<td rowspan="2">DECREMENTO</td>
+				<td>x=--y</td>
+				<td id='rdrecrementopre'></td>
+			</tr>
+			<tr>
+				<td>x=y--</td>
+				<td id="rdrecrementopos"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script>
+		//V A R I A B L E S
+		var y     =5;
+		var rsuma = document.getElementById('rsuma');
+		var rresta = document.getElementById('rresta');
+		var rmultiplicacion = document.getElementById('rmultiplicacion');
+		var rdivision = document.getElementById('rdivision');
+		var rmodulo = document.getElementById('rmodulo');
+		var rincrementopre = document.getElementById('rincrementopre');
+		var rincrementopos = document.getElementById('rincrementopos');
+		var rdrecrementopre = document.getElementById('rdrecrementopre');
+		var rdrecrementopos = document.getElementById('rdrecrementopos');
+
+		//R E S P U E S T A S
+		rsuma.innerHTML = y + 2;
+		rresta.innerHTML = y - 2;
+		rmultiplicacion.innerHTML = y * 2;
+		rdivision.innerHTML = y / 2;
+		rmodulo.innerHTML = y % 2;
+		rincrementopre.innerHTML = ++y;
+		y = 5;
+		rincrementopos.innerHTML = y++;
+		y = 5;
+		rdrecrementopre.innerHTML = --y;
+		y = 5;
+		rdrecrementopos.innerHTML = y--;
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operadores Comparación</title>
+		<style>
+		table{
+			border-collapse: collapse;
+			color: #777;
+			font: 16px Arial;
+			padding: 4px;
+			margin: 100px auto;
+			width: 800px;
+		}
+		table td, table th{
+			border: 1px dotted #ccc;
+			padding: 8px;
+		}
+		table th{
+			background-color: #999;
+			color: #fff;
+		}
+		table tr:nth-child(even){
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="4">Operadoes Comparación</th>
+			</tr>
+			<tr>
+				<th>Operador</th>
+				<th>Descripción</th>
+				<th>Comparación</th>
+				<th>Resultado</th>
+			</tr>
+			<tr>
+				<td>==</td>
+				<td>Es igual a</td>
+				<td>x==8</td>
+				<td id="rigualigu"></td>
+			</tr>
+			<tr>
+				<td>===</td>
+				<td>Es exactamente igual a(valor y tipo)</td>
+				<td>x===5</td>
+				<td id="riguiguigu"></td>
+			</tr>
+			<tr>
+				<td>!=</td>
+				<td>No es igual</td>
+				<td>x!=8</td>
+				<td id="rdiferent"></td>
+			</tr>
+			<tr>
+				<td>!==</td>
+				<td>No es igual(valor y tipo</td>
+				<td>x!==5</td>
+				<td id="rnoigual"></td>
+			</tr>
+			<tr>
+				<td>></td>
+				<td>Es mayor que</td>
+				<td>x>8</td>
+				<td id="rmayor"></td>
+			</tr>
+			<tr>
+				<td><</td>
+				<td>Es menor que</td>
+				<td>x<8</td>
+				<td id="rmenor"></td>
+			</tr>
+			<tr>
+				<td>>=</td>
+				<td>Es mayor igual que</td>
+				<td>x=>8</td>
+				<td id="rmayorigual"></td>
+			</tr>
+			<tr>
+				<td><=</td>
+				<td>Es menor igual que</td>
+				<td>x<=8</td>
+				<td id="rmenorigual"></td>
+			</tr>
+		</thead>
+	</table>
+
+	<script>
+	// V A R I A B L E S
+	var x = 5
+	var rigualigu = document.getElementById('rigualigu');
+	var riguiguigu = document.getElementById('riguiguigu');
+	var rdiferent = document.getElementById('rdiferent');
+	var rnoigual = document.getElementById('rnoigual');
+	var rmayor = document.getElementById('rmayor');
+	var rmenor = document.getElementById('rmenor');
+	var rmayorigual = document.getElementById('rmayorigual');
+	var rmenorigual = document.getElementById('rmenorigual');
+
+	// R E S U L T A D O S
+	rigualigu.innerHTML = (x==8)
+	riguiguigu.innerHTML = (x===5)
+	rdiferent.innerHTML = (x!=8)
+	rnoigual.innerHTML = (x!==5)
+	rmayor.innerHTML = (x>8)
+	rmenor.innerHTML = (x<8)
+	rmayorigual.innerHTML = (x>=8)
+	rmenorigual.innerHTML = (x<=8)
+	</script>
+	
+</body>
+</html>

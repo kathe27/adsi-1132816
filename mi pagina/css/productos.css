@@ -75,3 +75,15 @@ div.copy{
 	font-family: Arial;
 	text-align: center;	
 }
+input{
+	position: relative;
+	top: 450px;
+	left: 550px;
+	width: 250px;
+	background-color: #DDF9F8;
+}
+img.bus{
+	position: relative;
+	top: 452px;
+	left: 530px;
+}

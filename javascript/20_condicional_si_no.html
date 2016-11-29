@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Condicional (SINO)</title>
+</head>
+<body id="color">
+	<h1>Condicional (SINO)</h1>
+	<hr>
+	<h2 id="saludo"></h2>
+
+
+	<script>
+		var fruta = prompt('Ingrese un alimento');
+		if(fruta == 'manzana'){
+			alert('Es una fruta');
+		}else{
+			alert('Es una verdura');
+		}
+
+
+		var saludo = document.getElementById('saludo');
+		var color = document.getElementById('color');
+
+		var resp = prompt("Cuál es su color favorito en ingles ?");
+
+		if(resp == 'blue'){
+			saludo.innerText = "El color azul también es mi color favorito";
+			color.style.backgroundColor = 'blue';
+		}else{
+			saludo.innerText = 'El color '+resp+' no es mi color favorito'
+			color.style.backgroundColor = resp;
+		}
+			
+
+
+
+	</script>
+		
+	
+</body>
+</html>

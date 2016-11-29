@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Operadores Asignación</title>
+	<style>
+		table{
+			border-collapse: collapse;
+			color: #777;
+			font: 16px Arial;
+			padding: 4px;
+			margin: 100px auto;
+			width: 800px;
+		}
+		table td, table th{
+			border: 1px dotted #ccc;
+			padding: 8px;
+		}
+		table th{
+			background-color: #999;
+			color: #fff;
+		}
+		table tr:nth-child(even){
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="4">Operadores Asignación</th>
+			</tr>
+			<tr>
+				<th>Operador</th>
+				<th>Ejemplo</th>
+				<th>Igual</th>
+				<th>Resultado</th>
+			</tr>
+			<tr>
+				<td>=</td>
+				<td>x=y</td>
+				<td>x=5</td>
+				<td id="rigual"></td>
+			</tr>
+			<tr>
+				<td>+=</td>
+				<td>x+=y</td>
+				<td>x+=15</td>
+				<td id="rmasigu"></td>
+			</tr>
+			<tr>
+				<td>-=</td>
+				<td>x-=y</td>
+				<td>x=x-y</td>
+				<td id="rmenosigu"></td>
+			</tr>
+			<tr>
+				<td>*=</td>
+				<td>x*=y</td>
+				<td>x=x*y</td>
+				<td id="rporigu"></td>
+			</tr>
+			<tr>
+				<td>/=</td>
+				<td>x/=y</td>
+				<td>x=x/y</td>
+				<td id="rdiviigu"></td>
+			</tr>
+			<tr>
+				<td>%=</td>
+				<td>x%=y</td>
+				<td>x=x%y</td>
+				<td id="rporceigu"></td>
+			</tr>
+		</thead>
+	</table>
+
+	<script>
+	// V A R I A B L E S
+	var y =5;
+	var x =10;
+	var rigual  = document.getElementById('rigual');
+	var rmasigu = document.getElementById('rmasigu');
+	var rmenosigu = document.getElementById('rmenosigu');
+	var rporigu = document.getElementById('rporigu');
+	var rdiviigu = document.getElementById('rdiviigu');
+	var rporceigu = document.getElementById('rporceigu');
+
+
+	// R E S U L T A D O S 
+	rigual.innerHTML = y;
+	rmasigu.innerHTML = x + y;
+	rmenosigu.innerHTML = x - y;
+	rporigu.innerHTML = x * y;
+	rdiviigu.innerHTML = x / y;
+	rporceigu.innerHTML = x % y;
+
+	</script>
+	
+</body>
+</html>
