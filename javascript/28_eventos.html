@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos JS</title>
+	<style>
+		figure#car{
+			height: 200px;
+			margin: 50px auto;
+			width: 400px;
+		}
+		figure#car.car1{
+			background: url(imgs/car1.png) no-repeat;	
+		}
+		figure#car.car2{
+			background: url(imgs/car2.png) no-repeat;	
+		}
+		figure#car.car3{
+			background: url(imgs/car3.png) no-repeat;	
+		}
+
+		figure#car.out-anim{
+			-webkit-animation: 0.5s animOut ease-in 1;
+		}
+		@-webkit-keyframes animOut{
+			0%   {-webkit-transform: translateX(0px);}
+			100% {-webkit-transform: translateX(1000px);}
+		}
+		figure#car.in-anim{
+			-webkit-animation: 0.5s animIn ease-in 1;
+		}
+		@-webkit-keyframes animIn{
+			0% {-webkit-transform: translateX(-1000px);}
+			100% {-webkit-transform: translateX(0px);}
+		}
+	</style>
+</head>
+<body>
+	<h1>Eventos JS</h1>
+	<hr>
+
+	<select id="tcar">
+		<option value="1">car 1</option>
+		<option value="2">car 2</option>
+		<option value="3">car 3</option>
+	</select>
+	<figure id="car"></figure>
+
+	<script>
+		var tcar = document.getElementById('tcar');
+		var car  = document.getElementById('car');
+		car.classList.add('car1');
+
+		tcar.onchange = function(){
+			//car.className = ''; //Eliminar todas las clases
+			car.classList.remove('in-anim');
+			car.classList.add('out-anim');
+			if(this.value == 1){
+				setTimeout(function(){
+					car.classList.remove('car2','car3','out-anim');
+					car.classList.add('in-anim','car1');
+				},500);
+			} 
+			if(this.value == 2){
+				setTimeout(function(){
+					car.classList.remove('car1','car3','out-anim');
+					car.classList.add('in-anim','car2');
+				},500);
+			} 
+			if(this.value == 3){
+				setTimeout(function(){
+					car.classList.remove('car1','car2','out-anim');
+					car.classList.add('in-anim','car3');
+				},500);
+			} 	
+		}
+	</script>
+</body>
+</html>
