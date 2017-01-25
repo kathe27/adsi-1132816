@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Reto Vectores JS</title>
+	<style>
+		body{
+			background-color: #F3D21C;
+		}
+		.center{
+			display: block;
+			margin: 0px auto;
+			width: 800px;
+		}
+		h2{
+			text-align: center;
+			font-family: Arial;
+		}
+		nav ul{
+			padding: 0px;
+			margin: 30px auto;
+			width: 760px;
+		}
+		nav ul li{
+			display: inline-block;
+			height: 200px;
+			margin: 4px;
+			list-style: none;
+			width: 140px;
+			-webkit-transition: all 0.5s ease-in;
+		}
+		nav ul li.c1{
+			background: rgba(0,0,0,.3) url(imgs/marvin.png) no-repeat center center;
+		}
+		nav ul li.c2{
+			background: rgba(0,0,0,.3) url(imgs/lucas.png) no-repeat center center;
+		}
+		nav ul li.c3{
+			background: rgba(0,0,0,.3) url(imgs/porky.png) no-repeat center center;
+		}
+		nav ul li.c4{
+			background: rgba(0,0,0,.3) url(imgs/elmer.png) no-repeat center center;
+		}
+		nav ul li.c5{
+			background: rgba(0,0,0,.3) url(imgs/speedy.png) no-repeat center center;
+		}
+		nav ul li.character{
+			background-size: contain;
+		}
+		nav ul li.character:hover,
+		nav ul li.active{
+			background-color: rgba(0,0,0,.6);
+			cursor: pointer;
+			-webkit-transform: translateY(-6px) scale(1.05);
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<img src="imgs/looney.png" class="center">
+	</header>
+	<nav>
+		<h2>Seleccione el personaje: </h2>
+		<ul>
+			<li class="character c1"></li>
+			<li class="character c2"></li>
+			<li class="character c3"></li>
+			<li class="character c4"></li>
+			<li class="character c5"></li>
+		</ul>
+	</nav>
+	<section>
+		<h2>Configuración</h2>
+	</section>
+
+	<script>
+		var characters = document.getElementsByClassName('character');
+		for (var i = 0; i < characters.length; i++) {
+			characters[i].onclick = function(){
+				inactiveCharacters();
+				activeCharacter(this);
+			}
+		}
+		function inactiveCharacters(){
+			for (var i = 0; i < characters.length; i++) {
+				characters[i].classList.remove('active');
+			}
+		}
+			function activeCharacter(elem){
+				elem.classList.add('active');
+		}
+	</script>
+
+</body>
+</html>

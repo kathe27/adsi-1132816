@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metodos Fechas JS</title>
+</head>
+<body>
+	<h1>Metodos Fechas JS</h1>
+	<hr>
+	<h2>Fecha (GET)</h2>
+	<ul id="fechasget"></ul>
+
+	<h2>Fecha (SET)</h2>
+	<ul id="fechasset"></ul>
+
+	<script>
+		var fget = document.getElementById('fechasget');
+		var fset = document.getElementById('fechasset');
+
+		//GET
+
+		var gfecha = new Date();
+		fget.innerHTML = "<li>Fecha Completa: "+gfecha+"</li>";
+		fget.innerHTML += "<li>Numero Dia en el mes: "+gfecha.getDate()+"</li>";
+		fget.innerHTML += "<li>Numero Año: "+gfecha.getFullYear()+"</li>";
+		fget.innerHTML += "<li>Numero Mes: "+(gfecha.getMonth()+1)+"</li>";
+		fget.innerHTML += "<li>Numero Dia en la semana: "+gfecha.getDay()+"</li>";
+
+		//SET
+		var sfecha = new Date();
+		sfecha.setDate(24);
+		fset.innerHTML = "<li>Numero dia en el mes: "+sfecha.getDate()+"</li>";
+		sfecha.setFullYear(2010);
+		fset.innerHTML += "<li>Numero Año: "+sfecha.getFullYear()+"</li>";
+		sfecha.setMonth(11);
+		fset.innerHTML += "<li>Numero Mes: "+sfecha.getMonth()+"</li>";
+
+
+	</script>
+</body>
+</html>
