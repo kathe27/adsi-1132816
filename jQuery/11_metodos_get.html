@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metodos Get jQuery</title>
+</head>
+<body>
+	<h1>Metodos Get jQuery</h1>
+	<hr>
+
+	<section>
+		<p>Hola Mudo!</p>
+		<button id="uno">Mostrar Texto</button>
+	</section>
+	<br>
+	<br>
+	<br>
+	<ul>
+		<li>Colombia</li>
+		<li>Peru</li>
+		<li>Bolivia</li>
+		<li>Argentina</li>
+	</ul>
+	<button id="dos">Mostrar html</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<input type="text">
+	<br>
+	<button id="tres">Mostrar valor</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="www.facebook.com">Ir a facebook</a>
+	<br>
+	<button id="cuatro">Mostrar atributo</button>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+        $(document).ready(function(){
+            $("#uno").click(function(){
+                alert("" + $("p").text());
+            });
+        /*--------------------------------*/
+         $("#dos").click(function(){
+                alert("" + $("ul").html());
+            });
+        /*--------------------------------*/
+        $("#tres").click(function(){
+                alert("" + $("input").val());
+            });
+        /*--------------------------------*/
+        $("#cuatro").click(function(){
+                alert("" + $("a").attr("href"));
+            });
+        });  
+    </script>
+	</script>
+
+	
+</body>
+</html>

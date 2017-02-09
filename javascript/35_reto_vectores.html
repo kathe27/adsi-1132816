@@ -13,13 +13,15 @@
 			width: 800px;
 		}
 		h2{
+			border-bottom: 1px solid rgba(255,255,255,.4);
 			text-align: center;
 			font-family: Arial;
+			padding-bottom: 4px;
 		}
 		nav ul{
 			padding: 0px;
 			margin: 30px auto;
-			width: 760px;
+			max-width: 760px;
 		}
 		nav ul li{
 			display: inline-block;
@@ -53,6 +55,42 @@
 			cursor: pointer;
 			-webkit-transform: translateY(-6px) scale(1.05);
 		}
+		div.config{
+			margin: 0px auto;
+			text-align: center;
+			max-width: 760px;
+		}
+		div.config select,
+		div.config button{
+			background-color: #E03E23;
+			border: none;
+			border-radius: 0px;
+			font-size: 0.8em;
+			padding: 10px 40px;
+			outline: none;
+			-webkit-appearance: none;
+			-webkit-transition: all 0.5s ease-in;
+		}
+		div.config select{
+			background: rgba(0,0,0,.3) url(imgs/arrow-down.png) no-repeat 170px center; 
+			background-size: 8%;
+		}
+		div.config button:hover{
+			cursor: pointer;
+			background-color: #C3422C; 
+		}
+		nav ul#showvector li{
+			background-size: contain;
+			height: 80px;
+			width: 80px;
+		}
+		nav ul#showvector li span{
+			background-color: rgba(255,255,255,.6);
+			font-size: 1.2em;
+			line-height: 1.6em;
+			padding: 4px 8px;
+
+		}
 	</style>
 </head>
 <body>
@@ -62,19 +100,40 @@
 	<nav>
 		<h2>Seleccione el personaje: </h2>
 		<ul>
-			<li class="character c1"></li>
-			<li class="character c2"></li>
-			<li class="character c3"></li>
-			<li class="character c4"></li>
-			<li class="character c5"></li>
+			<li id="c1" class="character c1"></li>
+			<li id="c2" class="character c2"></li>
+			<li id="c3" class="character c3"></li>
+			<li id="c4" class="character c4"></li>
+			<li id="c5" class="character c5"></li>
 		</ul>
 	</nav>
 	<section>
 		<h2>Configuración</h2>
+		<div class="config">
+			<select id="position">
+				<option value="">Seleccione Posición</option>
+				<option value="1">Inicio</option>
+				<option value="2">Final</option>	
+			</select>
+			<button id="add">Adicionar</button>
+			<button id="delete">Eliminar</button>
+		</div>
+		<h2>Lista:</h2>
+		<nav>
+			<ul id="showvector"></ul>
+		</nav>
+		
 	</section>
 
 	<script>
 		var characters = document.getElementsByClassName('character');
+		var showvector = document.getElementById('showvector');
+		var cselected  = null;
+		var position   = null;
+		var btnadd     = document.getElementById('add');
+		var btndelete  = document.getElementById('delete');
+		var chvector   = new Array();
+
 		for (var i = 0; i < characters.length; i++) {
 			characters[i].onclick = function(){
 				inactiveCharacters();
@@ -86,9 +145,47 @@
 				characters[i].classList.remove('active');
 			}
 		}
-			function activeCharacter(elem){
-				elem.classList.add('active');
+		function activeCharacter(elem){
+			elem.classList.add('active');
+			cselected = elem.getAttribute('id');
 		}
+		btnadd.onclick = function(){
+			if (validateInputs()) {
+				if (position == 1) {
+					chvector.unshift(cselected);
+				}
+				if (position == 2) {
+					chvector.push(cselected);
+				}
+				renderVector();
+			}
+		}
+		btndelete.onclick = function(){
+			if (validateInputs()) {
+				if (position == 1) {
+					chvector.shift(cselected);
+				}
+				if (position == 2) {
+					chvector.pop(cselected);
+				}
+				renderVector();
+			}
+		}
+		function validateInputs(){
+		    position = document.getElementById('position').value;
+			if(cselected != null && position.length > 0){
+				return true;
+			}else{
+				alert('Por favor debe seleccionar un personaje y una posición!');
+			}
+		}
+	    function renderVector(){
+	    	showvector.innerHTML = "";
+	    	for (var i = 0; i < chvector.length; i++) {
+	    		showvector.innerHTML += "<li class='"+chvector[i]+"'><span>"+i+"</span></li>";
+	    	}
+	    }
+
 	</script>
 
 </body>

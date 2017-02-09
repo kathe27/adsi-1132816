@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Metodos Set jQuery</title>
+</head>
+<body>
+	<h1>Metodos Set jQuery</h1>
+	<hr>
+
+	<section>
+		<p>Hola Mudo!</p>
+		<button id="uno">Asignar Texto</button>
+	</section>
+	<br>
+	<br>
+	<br>
+	<ul>
+		<li>Colombia</li>
+		<li>Peru</li>
+		<li>Bolivia</li>
+		<li>Argentina</li>
+	</ul>
+	<button id="dos">Asignar html</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<input type="text">
+	<br>
+	<button id="tres">Asignar nuevo valor</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="www.facebook.com">Ir a facebook</a>
+	<br>
+	<button id="cuatro">Asignar atributo</button>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#uno').click(function(event) {
+				$('p').text('Mundo Traidor!');
+			});
+		/*-----------------------------------------*/
+			$('#dos').click(function(event) {
+				$('ul').html('<li>China</li><li>Suiza</li><li>Ecuador</li><li>Republica Dominicana</li>');
+			});
+		/*-----------------------------------------*/
+			$('#tres').click(function(event) {
+				$('input').val('Kathe');
+			});
+		/*-----------------------------------------*/
+			$('#cuatro').click(function(event) {
+				$('a').attr('href', "http://www.youtube.com");
+			});
+		});
+
+	</script>
+
+	
+</body>
+</html>

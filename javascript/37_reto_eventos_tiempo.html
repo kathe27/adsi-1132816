@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto Eventos Tiempo(JS)</title>
+</head>
+<body>
+	<h1>Reto Eventos Tiempo(JS)</h1>
+	<hr>
+	<input type="number" id="time" min="1" max="999">
+	<input type="submit" value="Enviar" id="contador">
+	<h4 id="result"> </h4>
+	<script>
+		var contador = 	  document.getElementById('contador');
+		contador.onclick = function() {
+			contador = time;
+			var time     =    document.getElementById('time').value;
+			var intervalo = setInterval(function() {
+			if(time == 0) {
+				clearInterval(intervalo);
+			}
+			result.innerHTML = time;
+			time--;
+		},1000);
+		}
+	</script>
+</body>
+</html>

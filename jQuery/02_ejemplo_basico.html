@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo Bàsico jQuery</title>
+	<style>
+		body{
+			font-family: Arial;
+		}
+		p{
+			background-color: #eee;
+			border: 4px solid #aaa;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Ejemplo Bàsico jQuery</h1>
+	<hr>
+	<article>
+		<h1>Lista de Parrafos</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque nesciunt ex quibusdam vel maiores cumque inventore architecto recusandae minima! Aperiam nostrum officia quasi praesentium voluptates, repellendus laudantium eum sequi cumque.</p>
+		<p>Pariatur est ipsum quaerat alias aspernatur ad numquam dolores maxime officia ut similique, ex ipsa, quae harum ratione totam quibusdam tempora architecto nam laboriosam temporibus. Explicabo voluptates, sapiente unde atque.</p>
+		<p>In nisi nemo doloremque accusamus dolor voluptas nihil, voluptates eius voluptatem, dicta sequi ut. Optio voluptate omnis cum, vel, officia placeat odit nam culpa quam, neque ipsa sequi necessitatibus quis.</p>
+		<p>Enim recusandae dicta amet itaque dignissimos suscipit natus, pariatur, eveniet laborum, hic ex similique ratione autem cupiditate nam. Aliquam tenetur atque, tempore repudiandae delectus dignissimos quod dolorum illo harum! Ut?</p>
+		<p>Ducimus distinctio non optio voluptatem error officiis sit, pariatur facere a est autem unde temporibus impedit, odit alias maxime excepturi eum quas inventore. Nobis voluptatibus quidem, libero soluta tenetur, possimus.</p>
+	</article>
+	<button>Eliminar Pàrrafo</button>
+
+	<script src="js/jquery-3.1.1.js"></script>	
+	<script>
+		$(document).ready(function() {
+			$('button').click(function(event) {
+				$('p').first().remove();
+			});
+		});
+	</script>
+
+	
+</body>
+</html>

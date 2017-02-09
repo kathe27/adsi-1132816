@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto Eventos Scroll jQuery</title>
+	<style>
+		body{
+			font-family: Arial;
+		}
+		nav{
+			background-color: black;
+			color: #53f0be;
+			padding: 40px;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			animation: 0.5s animShowNav ease-in 1 forwards;
+		}
+		h1{
+			padding-top: 140px;
+			text-align: center;
+		}
+		p{
+			color: #999;
+			padding: 20px;
+			margin: 0px auto;
+			width: 800px;
+		}
+		.hedenav{
+			animation: 0.5s animHideNav ease-in 1 forwards;
+		}
+		@keyframes animHideNav{
+			0%{
+				top: 0px;
+				opacity: 1;
+			}
+			100%{
+				top: -100px;
+				opacity: 0;
+			}
+		}
+		@keyframes animShowNav{
+			0%{
+				top: -100px;
+				opacity: o;
+			}
+			100%{
+				top: 0px;
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<nav>Menú opciones</nav>
+	<h1>Reto Eventos Scroll jQuery</h1>
+	<hr>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium accusantium dolorum delectus, facere temporibus iste consectetur nesciunt mollitia magni dolor reprehenderit ullam, cum beatae harum officia neque exercitationem dicta?</p>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$lastScrollTop = 0;
+			$winHeight = $(window).height();
+
+			$(window).scroll(function(event) {
+				$st = $(this).scrollTop();
+				if ($st > $lastScrollTop && $st >120){
+					// Down
+					$('nav').addClass('hidenav');
+				}else{
+					// up
+					if($st + $winHeight < $(document).height()){
+						$('nav').removeClass('hidenav');
+					}
+				}
+				$lastScrollTop = $st;
+			});
+		});	
+	</script>
+
+</body>
+</html>
