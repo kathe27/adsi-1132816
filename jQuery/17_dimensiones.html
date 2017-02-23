@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dimensiones jQuery</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		section{
+			background-color: #61fa32;
+			border: 10px solid #3b8923;
+			height: 350px;
+			padding: 20px;
+			margin: 0px auto;
+			width: 800px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Dimensiones jQuery</h1>
+	<hr>
+	<section></section>
+	<button id="btn1">Mostrar Dimensiones (Sin Relleno y Borde)</button>
+	<br>
+	<button id="btn2">Mostrar Dimensiones (Con Relleno y sin Borde)</button>
+	<br>
+	<button id="btn3">Mostrar Dimensiones (Con Relleno y con Borde)</button>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btn1').click(function(event) {
+				$ancho = $('section').width();
+				$alto = $('section').height();
+				alert('Ancho: '+$ancho+' Alto '+$alto);
+			});
+			$('#btn2').click(function(event) {
+				$ancho_relleno = $('section').innerWidth();
+				$alto_relleno = $('section').innerHeight();
+				alert('Ancho con relleno : '+$ancho_relleno+' Alto con Relleno '+$alto_relleno);
+			});
+			$('#btn3').click(function(event) {
+				$ancho_relleno_bordes = $('section').outerWidth();
+				$alto_relleno_bordes = $('section').outerHeight();
+				alert('Ancho con relleno y borde: '+$ancho_relleno_bordes+' Alto con Relleno y borde '+$alto_relleno_bordes);
+			});
+		});
+	</script>
+
+	
+</body>
+</html>

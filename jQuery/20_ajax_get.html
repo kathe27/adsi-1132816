@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax GET jQuery</title>
+</head>
+<body>
+	<h1>Ajax GET jQuery</h1>
+	<hr>
+
+	<select id="razas">
+		<option value="">Seleccione una raza de perro</option>
+		<option value="1">Akita Americano</option>
+		<option value="2">Sabueso Yugoslavo</option>
+		<option value="3">Podenco Canario</option>
+		<option value="4">Terriers</option>
+	</select>
+	<img src="imgs/animal.gif" height="50" width="50" id="loading">
+	<select id="referencias" disabled></select>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#loading').hide();
+
+			$('#razas').change(function(event) {
+				$raza = parseInt($(this).val());
+
+				if ($raza > 0) {
+					$.get('razas.php',{ raza: $raza},function(data) {
+						console.log(data);
+						$('#loading').show();
+						$('#referencias').hide();
+						setTimeout(function(){
+							$('#loading').hide();
+							$('#referencias').removeAttr('disabled');
+							$('#referencias').show().html(data);
+						},1000);
+					});
+				}else{
+					alert('Debe seleccionar una raza de perros!');
+				}
+				
+			});
+		});
+	</script>
+
+	
+</body>
+</html>

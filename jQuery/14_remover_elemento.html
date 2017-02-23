@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Remover Elemento jQuery</title>
+	<style>
+		body{
+			background-color: #c7f254;
+			font-family: Arial;
+			text-align: center;
+		}
+		ul#tareas{
+			background-color: #98bc39;
+			color: #fff;
+			list-style: none;
+			margin: 20px auto;
+			text-align: left;
+			padding: 20px;
+			width: 300px;
+		}
+		ul#tareas li{
+			border-top: 1px solid #c7f254;
+			padding: 10px;
+		}
+		ul#tareas li:last-child{
+			border-bottom: 1px solid #c7f254;
+		}
+	</style>
+</head>
+<body>
+	<h1>Remover Elemento jQuery</h1>
+	<hr>
+	<h2>Lista de Tareas</h2>
+	<ul id="tareas">
+		<li> <button> &times; </button>Tender la Ropa </li>
+		<li> <button> &times; </button>Barrer la Casa </li>
+		<li> <button> &times; </button>Trapear el Baño </li>
+		<li> <button> &times; </button>Lavar los Platos </li>
+		<li> <button> &times; </button>Tender la Ropa </li>
+		<li> <button> &times; </button>Hacer los Mandados </li>
+		<li> <button> &times; </button>Hacer el Almuerzo </li>
+		<li> <button> &times; </button>Sacar el Perro </li>
+	</ul>
+	<button id="vaciar">Eliminar Todas las Tareas</button>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('ul#tareas li button').click(function(event) {
+				$(this).parent().remove();
+			});
+			/*---------------------------------------*/
+			$('#vaciar').click(function(event) {
+				$('#tareas').empty();
+			});
+		});
+	</script>
+</body>
+</html>

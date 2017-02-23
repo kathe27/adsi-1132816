@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pokemones Evolution</title>
+	<link rel="stylesheet">
+</head>
+<body>
+	<style>
+		@font-face{
+		src: url("fonts/Pokemon Solid.ttf");
+		font-family: "Pokemon";
+		}
+		*{
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		outline: none;
+		text-decoration: none;
+		}
+		h1 {
+		font-family: "Pokemon";
+		font-size: 40px;
+		color: #ed1c22;
+		}
+		h1, h2{
+		text-align: center;
+		text-transform: uppercase;
+		}
+		section#container{
+		width: 920px;
+		margin: 50px auto;
+		}
+		section#container article{ 
+		width: 300px;
+		display: inline-block;
+		vertical-align: top;
+		}
+
+		h2{
+		padding-bottom: 14px;
+		border-bottom: 2px solid #000;
+		}
+		section#container article div{
+		width: 160px;
+		height: 160px;
+		border: 1px solid #000;
+		margin: 20px auto;
+		border-radius: 50%;
+		}
+
+		section#container article#secondEvolution div,
+		section#container article#thirdEvolution div{
+			background: url(imgs/pokebola.png) no-repeat center center/ 70% 70%;
+			filter: grayscale(1);
+		}
+		section#container article#secondEvolution div.active,
+		section#container article#thirdEvolution div.active{
+			filter: grayscale(0);
+		}
+
+
+		#pokemon1.firstEvo {background-image: url(imgs/pichu.png);}
+		#pokemon1.secondEvo {background-image: url(imgs/pikachu.png);}
+		#pokemon1.thirdEvo {background-image: url(imgs/raichu.png);}
+
+		#pokemon2.firstEvo {background-image: url(imgs/bulbasaur.png);}
+		#pokemon2.secondEvo {background-image: url(imgs/ivysaur.png);}
+		#pokemon2.thirdEvo {background-image: url(imgs/venusaur.png);}
+
+		#pokemon3.firstEvo {background-image: url(imgs/charmander.png);}
+		#pokemon3.secondEvo {background-image: url(imgs/charmeleon.png);}
+		#pokemon3.thirdEvo {background-image: url(imgs/charizard.png);}
+
+		.pokemon {
+		background-color: #fff;
+		background-size: 70% 70%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		z-index: 2;
+
+		}
+	</style>
+	<section id="container">
+		<h1>Pokemons Evolution</h1>
+		<article>
+		<h2>First Evolution</h2>
+			<div id="pokemon1" class="pokemon firstEvo"></div>
+			<div id="pokemon2" class="pokemon firstEvo"></div>
+			<div id="pokemon3" class="pokemon firstEvo"></div>
+		</article>
+		<article id="secondEvolution">
+		<h2>Second Evolution</h2>
+			<div></div>
+			<div></div>
+			<div></div>
+		</article>
+		<article id="thirdEvolution">
+		<h2>Third Evolution</h2>
+			<div></div>
+			<div></div>
+			<div></div>
+		</article>
+	</section>
+
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
