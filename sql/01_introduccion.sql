@@ -7,6 +7,9 @@ mysql/ -u root -p
 # Ver las bases de datos
 show databases;
 
+# Permite ver la version mysql
+select version();
+
 # Craer una base de datos
 create database nombrebasededatos;
 

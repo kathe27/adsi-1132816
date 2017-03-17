@@ -8,3 +8,11 @@ insert into clientes
 (id, documento, nombres, telefono, direccion)
 values
 (default, 75000008, 'Apu Nahasa', 8800088,'Calle 120-80');
+
+# Backup (Insertar una tabla en una nueva tabla)
+insert into copia_tabla
+select * from tabla;
+
+# Backup (Insertar una tabla en nueva tabla en otra base de datos)
+insert into copia_basedatos.copia_tabla
+select * from basedatos.tabla;
