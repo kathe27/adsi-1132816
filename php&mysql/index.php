@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
 	<title>CRUD - PHP & MYSQL</title>
 	<link rel="stylesheet" href="public/css/bootstrap.min.css">
 	<link rel="stylesheet" href="public/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="public/css/custom.css">
 
 </head>
 <body>
@@ -18,9 +20,66 @@
 					<i class="glyphicon glyphicon-plus"></i>
 					Avatar
 				</a>
+				<hr>
+				<?php if (isset($_SESSION['action'])): ?>
+
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<div class="alert alert-success alert-dismissible" role="alert">
+  								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  								<?php if ($_SESSION['action'] == 'Add'):  ?>
+							  		<strong>Aviso!</strong> El Avatar se registro correctamente.
+							    <?php endif ?>
+							    <?php if ($_SESSION['action'] == 'Edit'):  ?>
+							  		<strong>Aviso!</strong> El Avatar se modifico correctamente.
+							    <?php endif ?>	
+							    <?php if ($_SESSION['action'] == 'Delete'):  ?>
+							  		<strong>Aviso!</strong> El Avatar se elimino correctamente.
+							    <?php endif ?>
+
+							</div>
+						</div>
+					</div>
+					<?php unset($_SESSION['action']); ?>
+				<?php endif ?>
+				
 				<?php 
 					include 'includes/db.php';
+					$sql = "SELECT * FROM avatars";
+					$rs  = mysqli_query($con, $sql);
 				 ?>
+				<div class="row">
+					<?php while ($row = mysqli_fetch_array($rs)) { ?>
+						<div class="col-md-3">
+							<figure class="avatars" style="background: url(<?=$row['image']?>)no-repeat center; ">
+								<figcaption><?=$row['name']?></figcaption>
+								<nav class="text-center">
+									<a href="show.php?id=<?=$row['id']?>" 
+											   class="btn btn-default" 
+											   data-toggle="tooltip" 
+											   data-placement="top" 
+											   title="Consultar">
+										<i class="glyphicon glyphicon-search"></i>
+									</a>
+									<a href="edit.php?id=<?=$row['id']?>" class="btn btn-default" 
+										       data-toggle="tooltip" 
+										       data-placement="top" 
+										       title="Adicionar">
+										<i class="glyphicon glyphicon-pencil"></i>
+									</a>
+									<a class="btn btn-danger btn-delete" 
+											   data-toggle="tooltip" 
+											   data-placement="top" 
+											   data-id="<?=$row['id']?>"
+											   title="Eliminar">
+										<i class="glyphicon glyphicon-trash"></i>
+									</a>
+								</nav>
+							</figure>
+						</div>
+					<?php } ?>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -30,6 +89,14 @@
 	<script>
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
+			/*-------------------------------------*/
+			$('.btn-delete').click(function(event) {
+				if (confirm('Realmente desea eliminar este Avatar?')) {
+					$id = $(this).attr('data-id');
+					window.location.replace('delete.php?id='+$id);
+				}
+			});
+			/*-------------------------------------*/
 		});
 	</script>
 
