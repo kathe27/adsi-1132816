@@ -3,13 +3,12 @@
 	require 'config/database.php';
 	require 'config/redirect.php';
 	include 'templates/header.inc';
-
 ?>
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<h2 class="text-center">Sistema Ventas (PDO & MYSQL)</h2>
+			<h1 class="text-center">Sistema Ventas (PDO & MYSQL)</h1>
 			<hr>
 			<div class="panel panel-primary">
 			  <div class="panel-heading">
@@ -35,15 +34,9 @@
 						}
 
 					}else {
-						echo '<div class="alert alert-danger">
-								  <div class="alert-icon">
-								    <i class="material-icons">error_outline</i>
-								  </div>
-								  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true"><i class="material-icons">clear</i></span>
-								  </button>
-							      <b>Error!</b> Datos Incorrectos!
-							</div>';
+						echo "<div class='alert alert-primary alert-dismissible '>
+							  <button type='button' class='close' data-dismiss='alert'
+							  ><span>&times;</span></button><strong>Datos Incorrectos!</strong></div>";
 					}
 					$con = null;
 

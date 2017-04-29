@@ -4,5 +4,5 @@
 	unset($_SESSION['unombres']);
 	unset($_SESSION['urol']);
 	session_destroy();
-	echo "<script>window.location.replace('index.php')</script>";
+	echo "<script>window.location.replace('index.php');</script>";
  ?>

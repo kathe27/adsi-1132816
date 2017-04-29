@@ -9,5 +9,3 @@
 		<link rel="stylesheet" href="<?=$assets_css?>custom.css">
 	</head>
 	<body>
-		
-
