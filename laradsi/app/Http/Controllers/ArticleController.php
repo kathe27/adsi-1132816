@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
+use App\Category;
+use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
@@ -13,7 +16,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::all();
+        //dd($articles);
+        //var_dump($articles);
+
+        return view('articles.index')->with('articles', $articles);
     }
 
     /**
@@ -23,7 +30,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+         $cats = Category::all();
+         return view ('articles.create', compact('cats'))->with('cats',$cats);
     }
 
     /**
@@ -32,9 +40,19 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
+        $art = new Article;
+        $art->name = $request->get('name');
+        $file = $request->file('image');
+        $urlfile = $file->getClientOriginalName();
+        $art->image = '/images'.$urlfile;
+        $request->file('image')->move(base_path().'/public/imgs/', $urlfile);
+        $art->content = $request->get('content');
+        $art->category_id = $request->get('category_id');
+        if ($art->save()) {
+            return redirect('Article')->with('status', 'El articulo <strong>'.$art->name.'</strong> fue adicionado con exito!');
+        }
     }
 
     /**
@@ -45,7 +63,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Articles.show')->with('article',Article::find($id));
     }
 
     /**
@@ -56,7 +74,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $art = Article::find($id);
+        $cats = Category::all();
+        return view('Articles.edit')->with('art', $art)->with('cats', $cats);
     }
 
     /**
@@ -66,9 +86,27 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArticleRequest $request, $id)
     {
-        //
+        $art = Article::find($id);
+        if($request->hasFile('photo')) {
+            $art->name = $request->get('name');
+            $art->content = $request->get('content');
+            $art->category_id = $request->get('category_id');
+            $file = $request->file('image');
+            $urlfile = $file->getClientOriginalName();
+            $art->image = '/imgs/'.$urlfile;
+            $request->file('image')->move(base_path().'/public/imgs/', $urlfile);
+            
+        }else{
+            $art->name = $request->get('name');
+            $art->content = $request->get('content');
+            $art->category_id = $request->get('category_id');
+        }
+            
+        if ($art->save()) {
+             return redirect('Article')->with('status', 'El articulo <strong>'.$art->name.'</strong> fue modificada con exito!');
+        }
     }
 
     /**
@@ -79,6 +117,7 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::destroy($id);
+        return redirect('Article')->with('status', 'El articulo fue eliminado con exito!');
     }
 }

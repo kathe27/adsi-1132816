@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Http\Requests\CategoryRequest;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,9 +38,15 @@ class categoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        dd($request);
+        //dd($request);
+        $cat = new Category;
+        $cat->name = $request->get('name');
+        if ($cat->save()){
+            return redirect('category')->with('status', 'La Categoría <strong>'.$cat->name.'</strong>
+            fue adicionada con exito!');
+        }
     }
 
     /**
@@ -50,7 +57,8 @@ class categoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $cat = Category::find($id);
+        dd($cat);
     }
 
     /**
@@ -61,7 +69,8 @@ class categoryController extends Controller
      */
     public function edit($id)
     {
-         return "Esta es la vista para modificar";
+        $cat = Category::find($id);
+        return view('categories.edit')->with('cat', $cat);
     }
 
     /**
@@ -71,9 +80,14 @@ class categoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+        $cat = Category::find($id);
+        $cat->name = $request->get('name');
+        if($cat->save()){
+            return redirect('category')->with('status', 'La Categoría <strong>'.$cat->name.'</strong>
+            fue modificada con exito!');
+        }
     }
 
     /**
@@ -84,6 +98,7 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return redirect('category')->with('status', 'La Categoría fue eliminada con exito!');
     }
 }

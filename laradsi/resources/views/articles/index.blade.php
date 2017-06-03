@@ -1,13 +1,13 @@
 @extends('layout-app.base')
 
-@section('title', 'Lista de Categorias')
+@section('title', 'Lista de Articulos')
 
 @section('content')
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<h1 class="text-center">Lista de Categorías</h1>
+		<div class="col-md-8 col-md-offset-2">
+			<h1 class="text-center">Lista de Articulos</h1>
 			<hr>
-			<a class="btn btn-success" href="{{ url('category/create') }}">
+			<a class="btn btn-success" href="{{ url('Article/create') }}">
 				<i class="glyphicon glyphicon-plus"></i> Adicionar
 			</a>
 			<hr>
@@ -22,23 +22,27 @@
 				<tr>
 					<th>Id</th>
 					<th>Nombre</th>
+					<th>Categoría</th>
 					<th>Acciones</th>
 				</tr>
-				@foreach($categories as $cat)
+				@foreach($articles as $art)
 					<tr>
-						<td>{{ $cat->id   }}</td>
-						<td>{{ $cat->name }}</td>
+						<td>{{ $art->id   }}</td>
+						<td>{{ $art->name }}</td>
+						<td>{{ $art->category->name }}</td>
 						<td>
-							<a class="btn btn-primary"  href="{{ url('category/'.$cat->id.'/edit')}}">
+							<a class="btn btn-primary"  href="{{ url('Article/'.$art->id)}}">
+								<i class="glyphicon glyphicon-search"></i>
+							</a>
+							<a class="btn btn-success"  href="{{ url('Article/'.$art->id.'/edit')}}">
 								<i class="glyphicon glyphicon-pencil"></i>
 							</a>
-							<form action="{{ url('category/'.$cat->id) }}" method="post" style="display: inline-block;">
+							<form action="{{ url('Article/'.$art->id) }}" method="post" style="display: inline-block;">
 								{{ method_field('delete') }}
 								{!! csrf_field() !!}
 								<button type="button" class="btn btn-danger btn-delete">
 									<i class="glyphicon glyphicon-trash"></i>
 								</button>
-
 							</form>
 						</td>
 					</tr>
@@ -46,6 +50,4 @@
 			</table>	
 		</div>	
 	</div>
-
-
 @endsection

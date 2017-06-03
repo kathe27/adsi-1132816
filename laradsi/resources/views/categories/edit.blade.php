@@ -1,15 +1,15 @@
 @extends('layout-app.base')
 
-@section('title', 'Adicionar Categoría')
+@section('title', 'Modificar Categoría')
 
 @section('content')
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<h1 class="text-center">Adicionar Categoría</h1>
+			<h1 class="text-center">Modificar Categoría</h1>
 			<hr>
 			<ul class="breadcrumb">
 				<li><a href="{{url('category')}}">Lista Categorías</a></li>
-				<li class="active">Adicionar Categoría</li>
+				<li class="active">Modificar Categoría</li>
 			</ul>
 
 			@if(count($errors) > 0)
@@ -23,14 +23,15 @@
 			@endif
 		
 			<hr>
-			<form action="{{url('category')}}" method="post">
+			<form action="{{url('category/'.$cat->id)}}" method="post">
 				<div class="form-group">
 					{!! csrf_field() !!}
-					<input type="text" name="name" class="form-control" placeholder="Nombre"> 
+					{{method_field('put')}}
+					<input type="text" name="name" class="form-control" placeholder="Nombre" value="{{$cat->name}}"> 
 				</div>
 				<div class="form-group">
 					<button class="btn btn-success" type="submit">
-						<i class="glyphicon glyphicon-send"></i>Guardar
+						<i class="glyphicon glyphicon-send"></i>Modificar
 					</button>
 				</div>
 			</form>
