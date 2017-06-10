@@ -8,6 +8,11 @@ use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
+    /*Constructor*/
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *

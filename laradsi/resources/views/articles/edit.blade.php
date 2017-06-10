@@ -30,19 +30,23 @@
 					<input type="text" name="name" class="form-control" placeholder="Nombre" value="{{$art->name}}"> 
 				</div>
 				<div class="form-group">
-					<input type="file" name="image" accept="image/*">
+					<select class="form-control" name="category_id">
+					@foreach($cats as $cat)
+						{{-- Operador Ternario --}}
+						{{-- condicion ? verdadero : falso --}}
+						{{-- (5 > 10) ? 'Es Verdadero' : 'Es Falso' --}}
+						<option value="{{ $cat->id}}" {{($art->category_id == $cat->id ? "selected": "") }}>{{$cat->name}}</option>
+					@endforeach
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="file" id="upload" name="image" accept="image/*" style="display: none">
+					<button class="btn btn-default btn-upload" type="button">
+						<i class="glyphicon glyphicon-picture"></i>Seleccionar Imagen
+					</button>
 				</div>
 				<div class="form-group">
 					<textarea type="text" name="content" class="form-control" placeholder="Contenido" >{{$art->content}}</textarea>
-				</div>
-				<div class="form-group">
-					<select class="form-control" name="category_id">
-					@foreach($cats as $cat)
-						<option value="{{ $cat->id}}" @if($cat->id == $art->category_id) selected
-												}
-							@endif>{{$cat->name}}</option>
-					@endforeach
-					</select>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-success" type="submit">

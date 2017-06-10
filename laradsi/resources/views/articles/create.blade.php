@@ -26,20 +26,26 @@
 			<form action="{{url('Article')}}" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					{!! csrf_field() !!}
-					<input type="text" name="name" class="form-control" placeholder="Nombre"> 
-				</div>
-				<div class="form-group">
-					<input type="file" name="image" accept="image/*">
-				</div>
-				<div class="form-group">
-					<textarea type="text" name="content" class="form-control" placeholder="Contenido"></textarea>
+					<input type="text" name="name" class="form-control" placeholder="Nombre" value="{{old('name')}}"> 
 				</div>
 				<div class="form-group">
 					<select class="form-control" name="category_id">
 					@foreach($cats as $cat)
-						<option value="{{$cat->id}}">{{$cat->name}}</option>}
+						{{-- Operador Ternario --}}
+						{{-- condicion ? verdadero : falso --}}
+						{{-- (5 > 10) ? 'Es Verdadero' : 'Es Falso' --}}
+						<option value="{{$cat->id}}" {{(old("category_id") == $cat->id ? "selected": "")}}>{{$cat->name}}</option>
 					@endforeach
 					</select>
+				</div>
+				<div class="form-group">
+					<input type="file" id="upload" name="image" accept="image/*" style="display: none">
+					<button class="btn btn-default btn-upload" type="button">
+						<i class="glyphicon glyphicon-picture"></i>Seleccionar Imagen
+					</button>
+				</div>
+				<div class="form-group">
+					<textarea type="text" name="content" class="form-control" placeholder="Contenido">{{old('content')}}</textarea>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-success" type="submit">

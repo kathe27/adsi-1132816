@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Article extends Model
 {
@@ -12,5 +13,11 @@ class Article extends Model
 
     public function category(){
     	return $this->belongsTo('App\category');
+    }
+
+    public function getCreatedAtAttribute($date){
+    	Carbon::setlocale('es');
+    	//return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l j F Y');
+    	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->diffForHumans();
     }
 }

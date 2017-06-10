@@ -23,19 +23,30 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'        => 'required|min:5',
-            'content'     => 'required|min:5'                     
-        ];
+
+        if ($this->method() == 'put') {
+            return [
+                'name'        => 'required|min:5',
+                'category_id' => 'required',
+                'image'       => 'required',
+                'content'     => 'required' 
+            ];
+        }else{
+            return [
+                'name'        => 'required|min:5',
+                'category_id' => 'required',
+                'content'     => 'required'                     
+            ]; 
+        }     
     }
     public function messages()
     {
         return [
             'name.required'        => 'El campo Nombre es requerido!',
             'name.min'             => 'El campo Nombre no puede tener menos de 5 (cinco) carácteres!',
-            'content.required'     => 'El campo Contenido es requerido!',
-            'content.min'          => 'El campo Contenido no puede tener menos de 5 (cinco) carácteres!',
-
+            'category_id.required' => 'El campo Categoria es requerido!',
+            'image.required'       => 'El campo Imagen es requerido!',
+            'content.required'     => 'El campo Contenido es requerido!'
         ];
     }
 }

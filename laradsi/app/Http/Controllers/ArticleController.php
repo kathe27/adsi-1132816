@@ -9,6 +9,10 @@ use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
+    /*Constructor*/
+    public function __construct(){
+        $this->middleware('auth',['except' => ['listArticles']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +46,23 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        $art = new Article;
+        if ($request->hasFile('image')) {
+            $file = time().'.'.$request->image->extension();
+            $request->image->move(public_path('imgs'), $file);
+        }
+
+        $art = new Article();
+        $art->name = $request->get('name');
+        $art->image = 'imgs/' .$file;
+        $art->content = $request->get('content');
+        $art->category_id = $request->get('category_id');
+
+        if ($art->save()) {
+            return redirect('Article')->with('status', 'El articulo <strong>'.$art->name.'</strong> fue adicionado con exito!');
+        }
+    }
+    /* {
+       $art = new Article();
         $art->name = $request->get('name');
         $file = $request->file('image');
         $urlfile = $file->getClientOriginalName();
@@ -53,7 +73,7 @@ class ArticleController extends Controller
         if ($art->save()) {
             return redirect('Article')->with('status', 'El articulo <strong>'.$art->name.'</strong> fue adicionado con exito!');
         }
-    }
+    } */
 
     /**
      * Display the specified resource.
@@ -89,6 +109,24 @@ class ArticleController extends Controller
     public function update(ArticleRequest $request, $id)
     {
         $art = Article::find($id);
+        $art->name = $request->get('name');
+
+        if ($request->hasFile('image')) {
+            $file = time().'.'.$request->image->extension();
+            $request->image->move(public_path('imgs'), $file);
+            $art->image = 'imgs/'.$file;
+        }
+
+        $art->content = $request->get('content');
+        $art->category_id = $request->get('category_id');
+
+        if ($art->save()) {
+            return redirect('Article')->with('status', 'El articulo <strong>'.$art->name.'</strong> fue modificado con exito!');
+        }
+    }
+
+    /*{
+        $art = Article::find($id);
         if($request->hasFile('photo')) {
             $art->name = $request->get('name');
             $art->content = $request->get('content');
@@ -107,7 +145,7 @@ class ArticleController extends Controller
         if ($art->save()) {
              return redirect('Article')->with('status', 'El articulo <strong>'.$art->name.'</strong> fue modificada con exito!');
         }
-    }
+    }*/
 
     /**
      * Remove the specified resource from storage.
@@ -119,5 +157,10 @@ class ArticleController extends Controller
     {
         Article::destroy($id);
         return redirect('Article')->with('status', 'El articulo fue eliminado con exito!');
+    }
+
+    public function listArticles(){
+        $arts = Article::all();
+        return view('welcome')->with('arts', $arts);
     }
 }

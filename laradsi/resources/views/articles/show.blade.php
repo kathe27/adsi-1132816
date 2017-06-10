@@ -12,27 +12,25 @@
 				<li><a href="{{url('Article')}}">Lista Articulos</a></li>
 				<li class="active">Consultar Artículo</li>
 			</ul>
-			<table class="table table-hover">
+			<hr>
+			<table class="table table-striped">
 			  			<tr>
-			  				<th>ID:</th>
-			  				<td>{{ $article->id }}</td>
+			  				<th>Nombre:</th>
+			  				<td>{{ $article->name }}</td>
 			  			</tr>
 			  			<tr>
-			  				<th>Titulo:</th>
-			  				<td>{{ $article->name }}</td>
+			  				<th>Categoría:</th>
+			  				<td>{{ $article->category->name }}</td>
+			  			</tr>
+			  			<tr>
+			  				<th>Imagen:</th>
+			  				<td><img src="{{ asset($article->image) }}" width="240"></td>
 			  			</tr>
 			  			<tr>
 			  				<th>Contenido:</th>
 			  				<td>{{ $article->content }}</td>
 			  			</tr>
-			  			<tr>
-			  				<th>Categoria:</th>
-			  				<td>{{ $article->category->name }}</td>
-			  			</tr>
-			  			<tr>
-			  				<th>Imagen:</th>
-			  				<td><img src="{{ asset($article->image) }}" width="250"  alt=""></td>
-			  			</tr>
+			  			
 			  		</table>	
 		</div>	
 	</div>
