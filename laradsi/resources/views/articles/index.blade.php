@@ -11,6 +11,14 @@
 				<i class="glyphicon glyphicon-plus"></i> Adicionar
 			</a>
 			<hr>
+			<form class="form-inline" action="{{url('Article/search')}}" method="post">
+				<div class="form-group">
+					{!! csrf_field() !!}
+					<input type="search" name="name" class="form-control" placeholder="Nombre Artículo" autocomplete="off">
+					<button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-search"></i>Buscar</button>
+				</div>
+			</form>
+			<hr>
 			@if (session('status'))
 				<div class="alert alert-success alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert"><span 

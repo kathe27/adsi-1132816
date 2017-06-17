@@ -20,6 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        session(['section' => 'category']);
         $categories = Category::all();
         //dd($categories);
         //var_dump($categories);
@@ -105,5 +106,11 @@ class CategoryController extends Controller
     {
         Category::destroy($id);
         return redirect('category')->with('status', 'La Categoría fue eliminada con exito!');
+    }
+
+    public function ajaxsearch(Request $request){
+        $query = Category::name($request->get('name'))->orderBy('id','ASC')->get();
+        return view('categories.ajax')->with('categories',$query);
+
     }
 }

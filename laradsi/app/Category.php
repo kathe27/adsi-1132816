@@ -13,4 +13,10 @@ class Category extends Model
     public function article(){
     	return $this->hasMany('App\Article');
     }
+
+    public function scopeName($query, $name){
+    	if (trim($name) !='') {
+    		$query->where('name',"LIKE","%$name%");
+    	}
+    }
 }

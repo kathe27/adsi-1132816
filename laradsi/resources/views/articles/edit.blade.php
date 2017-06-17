@@ -11,16 +11,8 @@
 				<li><a href="{{url('Article')}}">Lista Artículos</a></li>
 				<li class="active">Modificar Artículo</li>
 			</ul>
-
-			@if(count($errors) > 0)
-				<div class="alert alert-danger alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert"><span 
-					aria-hidden="true">&times;</span></button>
-					@foreach($errors->all() as $message)
-						{{$message}}
-					@endforeach
-				</div>
-			@endif
+			
+			@include('layout-app.errors')
 		
 			<hr>
 			<form action="{{url('Article/'.$art->id)}}" method="post" enctype="multipart/form-data">

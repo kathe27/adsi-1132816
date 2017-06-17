@@ -11,13 +11,20 @@
 |
 */
 
-Route::get('', 'ArticleController@listArticles');
-
-Route::resource('category', 'CategoryController');
+//Articles
+Route::get('/', 'ArticleController@listArticles');
 Route::resource('Article', 'ArticleController');
+Route::post('Article/search', 'ArticleController@search');
 
-
+//Categories
+Route::resource('category', 'CategoryController');
+Route::post('ajaxsearch', 'CategoryController@ajaxsearch');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Cambiar Idioma
+Route::get('login/{locale}', function ($locale){
+	App::setlocale($locale);
+	return view('auth.login');
+});

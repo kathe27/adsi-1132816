@@ -24,11 +24,29 @@
 					$(this).parent().submit();
 				}
 			});
+
 			$('form').on('click', '.btn-upload', function(event){
 				event.preventDefault();
 				$('#upload').click();
 			});
-		});
+
+       		$('#ncategory').keyup(function(event){
+            	$name = $(this).val();
+            	$token = $('input[name=_token]').val();
+            	$.post('/ajaxsearch', { _token:$token, name: $name }, function(data){
+            		$('tbody').html('<img src="{{ asset('/imgs/loader.gif')}}">');
+
+				setTimeout(function(){ 
+ 					$.post('/ajaxsearch', {_token:$token, name: $name}, function(data) {
+				 	$('tbody').html(data);
+				});
+	 			}, 1000);
+            		
+
+       		});
+        });
+    });
+	
 	</script>
 
 </body>

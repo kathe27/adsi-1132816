@@ -16,10 +16,10 @@
 			<div class="collapse navbar-collapse" id="navbarclp">
 				@if(Auth::check())
 					<ul class="nav navbar-nav navbar-left">
-						<li>
+						<li @if(session('section') == 'category') class="active" @endif>
 							<a href="{{url('category')}}">Categorías</a>
 						</li>
-						<li>
+						<li @if(session('section') == 'article') class="active" @endif>
 							<a href="{{url('Article')}}">Artículos</a>
 						</li>
 					</ul>

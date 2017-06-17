@@ -20,6 +20,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        session(['section' => 'article']);
         $articles = Article::all();
         //dd($articles);
         //var_dump($articles);
@@ -160,7 +161,14 @@ class ArticleController extends Controller
     }
 
     public function listArticles(){
-        $arts = Article::all();
+        //$arts = Article::all();
+        $arts = Article::orderBy('id', 'desc')->get();
         return view('welcome')->with('arts', $arts);
+    }
+
+    public function search(Request $request){
+
+        $query = Article::name($request->get('name'))->orderBy('id','ASC')->get();
+        return view('articles.index')->with('articles', $query);
     }
 }

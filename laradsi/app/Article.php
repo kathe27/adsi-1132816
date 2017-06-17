@@ -20,4 +20,11 @@ class Article extends Model
     	//return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l j F Y');
     	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->diffForHumans();
     }
+
+    public function scopeName($query, $name){
+        if (trim($name) !='') {
+            $query->where('name', "LIKE", "%$name%")
+                  ->orwhere('content', "LIKE", "%$name%");
+        }
+    }
 }
