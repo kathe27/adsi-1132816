@@ -171,4 +171,23 @@ class ArticleController extends Controller
         $query = Article::name($request->get('name'))->orderBy('id','ASC')->get();
         return view('articles.index')->with('articles', $query);
     }
+
+    public function pdf(){
+        $articles = Article::all();
+
+        $view =\View::make('articles.pdf', compact('articles'))->render();
+        $pdf  =\App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->download('lista-articulos.pdf');
+    }
+
+    public function excel()
+{
+        \Excel::create('articlesfile', function($excel) {
+        $excel->sheet('sheetname', function($sheet) {
+        $articles = Article::all();
+        $sheet->loadView('articles.excel', array('articles' => $articles));
+        });
+        })->download('xls');
+    }
 }

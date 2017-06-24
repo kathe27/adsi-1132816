@@ -15,6 +15,8 @@
 Route::get('/', 'ArticleController@listArticles');
 Route::resource('Article', 'ArticleController');
 Route::post('Article/search', 'ArticleController@search');
+Route::get('Articles/pdf', 'ArticleController@pdf');
+Route::get('Articles/excel', 'ArticleController@excel');
 
 //Categories
 Route::resource('category', 'CategoryController');

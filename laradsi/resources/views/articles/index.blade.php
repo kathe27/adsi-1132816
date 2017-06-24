@@ -10,6 +10,12 @@
 			<a class="btn btn-success" href="{{ url('Article/create') }}">
 				<i class="glyphicon glyphicon-plus"></i> Adicionar
 			</a>
+			<a class="btn btn-default" href="{{url('Articles/pdf')}}">
+				<i class="glyphicon glyphicon-file"></i>Exportar PDF
+			</a>
+			<a class="btn btn-default" href="{{url('Articles/excel')}}">
+				<i class="glyphicon glyphicon-file"></i>Exportar EXCEL
+			</a>
 			<hr>
 			<form class="form-inline" action="{{url('Article/search')}}" method="post">
 				<div class="form-group">
