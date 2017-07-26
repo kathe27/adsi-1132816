@@ -7,6 +7,7 @@
         <div class="col-md-12">
         @foreach($arts as $art)
             <div class="row well">
+                
                 <div class="col-md-4">
                     @if($art->image)
                         <img src="{{asset($art->image)}}" width="100%" alt="">

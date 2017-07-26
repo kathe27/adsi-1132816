@@ -31,6 +31,17 @@
                                 @lang('login.forgot')
                             </a>
                             </div>
+                            <div class="form-group">
+                                <a  href="{{ url('auth/facebook')}}" class="btn btn-primary btn-social-icon btn-facebook">
+                                    <span class="fa fa-facebook"></span>
+                                </a>
+                                <a  href="{{ url('auth/google') }}" class="btn btn-danger btn-social-icon btn-google">
+                                    <span class="fa fa-google"></span>
+                                </a>
+                                <a  href="{{ url('auth/twitter') }}" class="btn btn-info btn-social-icon btn-twitter">
+                                    <span class="fa fa-twitter"></span>
+                                </a>
+                            </div>
                         </form>
                     </div>
                 </div>

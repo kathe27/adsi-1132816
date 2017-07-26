@@ -19,10 +19,10 @@ Route::get('Articles/pdf', 'ArticleController@pdf');
 Route::get('Articles/excel', 'ArticleController@excel');
 
 //Categories
+Auth::routes();
 Route::resource('category', 'CategoryController');
 Route::post('ajaxsearch', 'CategoryController@ajaxsearch');
 
-Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Cambiar Idioma
@@ -30,3 +30,15 @@ Route::get('login/{locale}', function ($locale){
 	App::setlocale($locale);
 	return view('auth.login');
 });
+
+
+Route::get('/home', ['as' => 'home','uses' => 'HomeController@index']);
+
+Route::get('auth/facebook', 'FacebookController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'FacebookController@handleFacebookCallback');
+Route::get('auth/google', 'GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'GoogleController@handleGoogleCallback');
+Route::get('auth/twitter', 'TwitterController@redirectToTwitter');
+Route::get('auth/twitter/callback', 'TwitterController@handleTwitterCallback');
+
+

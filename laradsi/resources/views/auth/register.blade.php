@@ -28,10 +28,7 @@
                         <div class="form-group">
                              <input id="password" type="password" class="form-control" name="password" required placeholder="Contraseña">
                         </div>
-
-                        <div class="form-group">
-                            <input id="password" type="password" class="form-control" name="password" required placeholder="Confirmar Contraseña">
-                        </div>
+                       
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">
                                 Register
